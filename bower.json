@@ -1,0 +1,25 @@
+{
+  "name": "js-algorithms",
+  "main": "js-algorithms.js",
+  "version": "0.0.1",
+  "authors": [
+    "marcus.malka@gmail.com"
+  ],
+  "description": "Testing out classical algorithms in JS",
+  "keywords": [
+    "malabi",
+    "js",
+    "functional"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor"
+  ],
+  "dependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.16.2"
+  }
+}
