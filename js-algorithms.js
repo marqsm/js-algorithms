@@ -44,6 +44,16 @@ function LinkedList(itemSet) {
 
     // remove item.. or position
     this.popHead = function(item) {
+        var item = list.head.value;
+
+        if (list.length == 0) {
+
+        }
+
+        list.head = list.head.next;
+        list.length -= 1;
+
+        return item;
     }
 
     this.popTail = function() {
@@ -55,6 +65,7 @@ function LinkedList(itemSet) {
         while (current.next.next !== undefined) {
             current = current.next;
         }
+        list.length -= 1;
         current.next = undefined;
         return item;
     }
