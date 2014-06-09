@@ -46,7 +46,17 @@ function LinkedList(itemSet) {
     this.popHead = function(item) {
     }
 
-    this.popTail = function(item) {
+    this.popTail = function() {
+        var item = list.tail.value,
+            current = list.head;
+
+        if (current.next == undefined) return undefined;
+
+        while (current.next.next !== undefined) {
+            current = current.next;
+        }
+        current.next = undefined;
+        return item;
     }
 
 

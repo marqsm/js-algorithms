@@ -23,5 +23,11 @@ describe("JS-algorithms", function() {
             ll.pushHead(6);
             expect(ll.head.value).to.equal(6);
         });
+
+        it("gets tail popped", function() {
+            ll.pushTail(8);
+            expect(ll.popTail()).to.equal(8);
+        });
+
     });
 });
