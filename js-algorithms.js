@@ -14,7 +14,7 @@ function LinkedList(itemSet) {
     var list = this;
 
     // insert a new item to current position.
-    this.add = function(value) {
+    this.pushTail = function(value) {
         var newItem = new Node(value);
 
         if (list.head == undefined) {
@@ -29,10 +29,26 @@ function LinkedList(itemSet) {
         return newItem;
     }
 
+    this.pushHead = function(value) {
+        var newItem = new Node(value);
+
+        if (list.head == undefined) {
+            list.pushTail(value);
+        } else {
+            newItem.next = list.head;
+            list.head = newItem;
+        }
+        list.length += 1;
+        return newItem;
+    }
 
     // remove item.. or position
-    this.remove = function(item) {
+    this.popHead = function(item) {
     }
+
+    this.popTail = function(item) {
+    }
+
 
     return this;
 }
