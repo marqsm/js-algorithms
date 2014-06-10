@@ -1,6 +1,7 @@
 var expect = chai.expect;
 
 var ll = new LinkedList();
+var pq = new PriorityQueue();
 
 describe("JS-algorithms", function() {
 
@@ -36,25 +37,41 @@ describe("JS-algorithms", function() {
         });
     });
 
-    describe("Binary Heap", function() {
-        xit("heap.insert()", function() {
-            expect(null).to.equal(true);
+    describe("Priority Queue (binary heap)", function() {
+        it("heap.insert()", function() {
+            [1, 2, 3, 4, 6, 5, 9, 8, 7, 10].forEach(function(value) {
+                pq.insert(value);
+            });
+            expect(pq.size()).to.equal(10);
         });
 
-        xit("heap.max()", function() {
-            expect(null).to.equal(true);
+        it("heap.delMax()", function() {
+            pq.empty();
+            [1, 2, 3, 4, 6, 5, 9, 8, 7, 10].forEach(function(value) {
+                pq.insert(value);
+            });
+            expect(pq.delMax()).to.equal(10);
+            expect(pq.delMax()).to.equal(9);
+            expect(pq.delMax()).to.equal(8);
         });
 
-        xit("heap.delMax()", function() {
-            expect(null).to.equal(true);
+        it("heap.isEmpty()", function() {
+            pq.empty();
+            expect(pq.isEmpty()).to.equal(true);
+            pq.insert(10);
+            expect(pq.isEmpty()).to.equal(false);
         });
 
-        xit("heap.isEmpty()", function() {
-            expect(null).to.equal(true);
-        });
-
-        xit("heap.size()", function() {
-            expect(null).to.equal(true);
+        it("heap.size()", function() {
+            pq.empty();
+            [1, 2, 3, 4, 6, 5, 9, 8, 7, 10].forEach(function(value) {
+                pq.insert(value);
+            });
+            expect(pq.size()).to.equal(10);
+            pq.delMax();
+            pq.delMax();
+            pq.delMax();
+            expect(pq.size()).to.equal(7);
         });
     });
 
