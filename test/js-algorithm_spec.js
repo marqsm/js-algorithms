@@ -2,6 +2,7 @@ var expect = chai.expect;
 
 var ll = new LinkedList();
 var pq = new PriorityQueue();
+var bst = new BST();
 
 describe("JS-algorithms", function() {
 
@@ -72,6 +73,38 @@ describe("JS-algorithms", function() {
             pq.delMax();
             pq.delMax();
             expect(pq.size()).to.equal(7);
+        });
+    });
+
+    describe("Binary Search Trees (BST)", function() {
+        it("bst.put && get the values for keys", function() {
+            bst.put(6, "foo");
+            bst.put(4, "bar");
+            bst.put(1, "baz");
+            bst.put(5, "bonk");
+            expect(bst.get(6)).to.equal("foo");
+            expect(bst.get(4)).to.equal("bar");
+            expect(bst.get(1)).to.equal("baz");
+        });
+
+        it("heap.get() when key exists", function() {
+            bst.empty();
+            bst.put(6, "foo");
+            bst.put(4, "bar");
+            bst.put(1, "baz");
+            bst.put(5, "bonk");
+            expect(bst.get(6)).to.equal("foo");
+            expect(bst.get(4)).to.equal("bar");
+            expect(bst.get(1)).to.equal("baz");
+            expect(bst.get(10)).to.equal(undefined);
+        });
+
+        it("bst.empty() empties data", function() {
+            bst.empty();
+            bst.put(6, "foo");
+            expect(bst.get(6)).to.equal("foo");
+            bst.empty();
+            expect(bst.get(6)).to.equal(undefined);
         });
     });
 
