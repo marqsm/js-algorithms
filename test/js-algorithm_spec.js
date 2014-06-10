@@ -4,7 +4,7 @@ var ll = new LinkedList();
 
 describe("JS-algorithms", function() {
 
-    describe("Dequeue", function() {
+    describe("Linked list / dequeue", function() {
         it("list.pushTail()", function() {
             ll.pushTail(5);
             expect(ll.head.value).to.equal(5);
@@ -34,6 +34,28 @@ describe("JS-algorithms", function() {
             expect(ll.popHead()).to.equal(2);
             expect(ll.length).to.equal(3);
         });
-
     });
+
+    describe("Binary Heap", function() {
+        xit("heap.insert()", function() {
+            expect(null).to.equal(true);
+        });
+
+        xit("heap.max()", function() {
+            expect(null).to.equal(true);
+        });
+
+        xit("heap.delMax()", function() {
+            expect(null).to.equal(true);
+        });
+
+        xit("heap.isEmpty()", function() {
+            expect(null).to.equal(true);
+        });
+
+        xit("heap.size()", function() {
+            expect(null).to.equal(true);
+        });
+    });
+
 });
